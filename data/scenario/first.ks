@@ -30,3 +30,6 @@
 
 ;最初は右下のメニューボタンを非表示にする
 [hidemenubutton]
+
+;scene1.ksに移動
+@jump storage="scene1.ks"
