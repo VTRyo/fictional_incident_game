@@ -156,3 +156,89 @@ project/
 ;縦書き表示
 [position vertical=true layer=message0 page=fore margint="45" marginl="0" marginr="70" marginb="60"]
 ```
+
+## 実際のscene1.ksの書き方パターン
+
+### 基本構造
+```
+;ティラノスクリプトサンプルゲーム
+
+[cm]
+[clearfix] 
+[start_keyconfig]
+
+[bg storage="背景画像.jpg" time="100"]
+@showmenubutton
+```
+
+### メッセージウィンドウ設定パターン
+```
+;メッセージウィンドウの設定
+[position layer=message0 width=1000 height=200 top=500 left=140]
+[position layer=message0 page=fore frame="frame.png" margint="45" marginl="50" marginr="70" marginb="60"]
+[position layer="message0" opacity="230" left=160 top=500 width=1000 height=200 page=fore visible=true]
+
+;メッセージウィンドウの表示
+@layopt layer=message0 visible=true
+
+;キャラクターの名前が表示される文字領域
+[ptext name="chara_name_area" layer="message0" color="white" size=28 bold=true x=180 y=505]
+[chara_config ptext="chara_name_area"]
+```
+
+### キャラクター定義パターン
+```
+;キャラクター登録
+[chara_new name="Tsumugi" storage="chara/tsumugi/tsumugi_stand.png" jname="Tsumugi"]
+
+;表情登録
+[chara_face name="Tsumugi" face="default" storage="chara/tsumugi/tsumugi_stand.png"]
+[chara_face name="Tsumugi" face="he_mouth" storage="chara/tsumugi/tsumugi_he.png"]
+[chara_face name="Tsumugi" face="close_mouth" storage="chara/tsumugi/tsumugi_close_mouth.png"]
+
+;キャラクター設定
+[chara_config brightness=30 talk_focus=brightness]
+```
+
+### キャラクター表示・操作パターン
+```
+;キャラクター登場
+[chara_show name="Tsumugi" width="550" top="100" time=1000]
+
+;表情変更
+[chara_mod name="Tsumugi" face="he_mouth" time=0]
+
+;キャラクター名:表情 の直接指定
+#Tsumugi:close_mouth
+```
+
+### 会話・演出パターン
+```
+;基本テキスト色設定
+[font color="black"]
+
+;キャラクター会話
+#Tsumugi
+;コメント（日本語原文）
+English text here.[p]
+
+;改行とページ送り
+Text here[r]
+More text[p]
+
+;待機
+[wait time=1000]
+
+;画面効果
+[quake count="5" time="2000"]
+
+;動的テキスト表示
+[mtext text="ざわ･･" layer="0" x="300" y="250" size="70" in_effect="wobble" time="0" color="0x000000" edge="0xffffff" wait="false"]
+```
+
+### 日英バイリンガル対応パターン
+```
+#キャラクター名
+;日本語原文をコメントで記録
+English translation text.[p]
+```
