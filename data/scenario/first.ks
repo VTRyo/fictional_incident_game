@@ -11,25 +11,23 @@
 
 ;ゲームで必ず必要な初期化処理はこのファイルに記述するのがオススメ
 
-;メッセージボックスは非表示
-@layopt layer="message" visible=false
-
 *start
-[position layer=message0 width=1200 height=660 top=400 left=35 ]
-[position layer=message0 page=fore frame="frame.png" margint="55" marginl="50" marginr="70" marginb="60"]
 
-[bg storage="office_day.jpg"]
-
-[position layer="message0" visible=true]
-
-[cm]
-メッセージウィンドウが下に表示されましたね？[r][l]
-ここにメッセージが表示されています。[r][l]
-
-
+;メッセージボックスを表示
+@layopt layer=message0 visible=true
 
 ;最初は右下のメニューボタンを非表示にする
 [hidemenubutton]
 
+[cm]
+[position layer=message0 width=1000 height=200 top=300 left=140]
+;プロダクトの危機を救え！へようこそ
+Welcome to "Save the Product Crisis!"[l][r]
+;この動画は、今から皆さんが体験するワークショップのイントロダクションです。
+This video is an introduction to the workshop you are about to experience.[l][r]
+;あなたはプロダクトの危機を救うため、みなさんで議論しながら、解決策を考えていきます。
+You will work together to discuss and come up with solutions to save the product crisis.[p]
+;それでは、早速始めましょう！
+Let's get started right away![l][r]
 ;scene1.ksに移動
 @jump storage="scene1.ks"
