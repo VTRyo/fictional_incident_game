@@ -140,10 +140,10 @@
 ;mediaFormatDefault = ogg;
 
 // ◆ BGMの音量 0 〜 100 で指定します。
-;defaultBgmVolume = 100;
+defaultBgmVolume = 100;
 
 // ◆ SEの音量 0 〜 100 で指定します。
-;defaultSeVolume = 100;
+defaultSeVolume = 100;
 
 // ◆ 動画の音量 0 〜 100 で指定します。
 ;defaultMovieVolume = 100;
@@ -154,7 +154,7 @@
 
 // ◆ サウンドで使用するスロット数をあらかじめ定義します。
 // こちらは、スマートフォンブラウザで適切に音を再生したい場合は必須です
-;defaultSoundSlotNum = 3;
+defaultSoundSlotNum = 3;
 
 
 // ◆ コンフィグ（メニュー）機能表示

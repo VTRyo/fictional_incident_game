@@ -33,7 +33,7 @@
 ;zunda
 [chara_new  name="Zunda" storage="chara/zunda/zunda_stand.png" jname="Zundamon"  ]
 
-;tsumugi
+;tsumugi 感情表現
 [chara_new  name="Tsumugi"  storage="chara/tsumugi/tsumugi_stand.png" jname="Tsumugi" ]
 [chara_face name="Tsumugi" face="default" storage="chara/tsumugi/tsumugi_stand.png"]
 [chara_face name="Tsumugi" face="he_mouth" storage="chara/tsumugi/tsumugi_he.png"]
@@ -41,6 +41,7 @@
 [chara_face name="Tsumugi" face="giza_eye_open" storage="chara/tsumugi/tsumugi_giza_eye_open.png"]
 [chara_face name="Tsumugi" face="ii_eye_close" storage="chara/tsumugi/tsumugi_ii_eye_close.png"]
 [chara_face name="Tsumugi" face="e_eye_circle" storage="chara/tsumugi/tsumugi_e_eye_circle.png"]
+[chara_face name="Tsumugi" face="mu_anger" storage="chara/tsumugi/tsumugi_mu_anger.png"]
 
 ;Hacker
 [chara_new name="Hacker" storage="chara/game_master/game_master.png" jname="Mystery Hacker" ]
@@ -50,12 +51,17 @@
 
 ;キャラクター登場
 [chara_show  name="Tsumugi" width="550" top="100" time=1000]
-[font color="black"]
+[font color="black" size=40 edge="white" edge_size=2]
 
+;音声設定
+[voconfig sebuf=2 name="Tsumugi" vostorage="tsumugi/tsumugi_1_{number}.ogg" number=1 volume=70 wait=false]
+
+[vostart]
 
 #Tsumugi
+;自動音声再生（voconfigで設定したパスが使用される）
 ;よし。今日のリリース完了！
-Good! I've completed release today.[p]
+Good! I've completed today's release.[p]
 
 [quake count="5" time="2000"]
 
@@ -92,7 +98,7 @@ Oh! I need to contact the SRE team, the SRE team![p]
 #Tsumugi
 [chara_mod name="Tsumugi" face="ii_eye_close" time=0]
 ;誰も連絡が取れない！どうしようこのままじゃサービスが……
-No one is available to contact! What should I do?[r] The service will be... [p]
+No one is available to contact! What should I do? The service will be... [p]
 
 [chara_show  name="Hacker" width="550" top="100" time=1000]
 
@@ -139,3 +145,19 @@ Huh? Me? But I'm not an SRE, and I don't know anything about it![p]
 I can't restore the service with that attitude![p]
 ;仕方ないのだ、おまえにチャンスをやるのだ
 Well, I don't have a choice. I'll give you a chance.[p]
+
+#Tsumugi
+[chara_mod name="Tsumugi" face="mu_anger" time=0]
+;わかったよ、あーしだってプロとしてのプライドがあるんだから
+Alright, I have my professional pride too![p]
+
+#Hacker
+;それでこそなのだ。これから僕が言う通りに、システムについて解答するのだ。特別にaiを使っても、近くにいる人と手を組んでやってもいいのだ。それと、SREの亡霊を2名だけ配置してやるのだ。
+That's the spirit! From now on, you will answer questions about the system as I tell you.[p]
+You can even use AI or team up with people nearby.[p]
+Also, I'll assign two SRE ghosts to help you.[p]
+
+;時間は50分。それ以上は我慢できないのだ
+You have 50 minutes. I can't wait any longer than that![p]
+
+[vostop]
