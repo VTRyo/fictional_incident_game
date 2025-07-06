@@ -219,6 +219,7 @@ project/
 
 ;キャラクター会話
 #Tsumugi
+[chara_mod name="Tsumugi" face="default" time=0]
 ;コメント（日本語原文）
 English text here.[p]
 
@@ -242,3 +243,47 @@ More text[p]
 ;日本語原文をコメントで記録
 English translation text.[p]
 ```
+
+### 感情表現
+
+- 日本語原文からキャラクターの感情を読み取り、chara_modを挿入すること
+
+```
+;Tsumugiの感情表現の例
+
+;表情:通常
+[chara_mod name="Tsumugi" face="default" time=0]
+
+;表情:驚き
+[chara_mod name="Tsumugi" face="he_mouth" time=0]
+
+;表情:驚いてフリーズしている
+[chara_mod name="Tsumugi" face="close_mounth" time=0]
+
+;表情:とぼけた驚き
+[chara_mod name="Tsumugi" face="e_eye_circle" time=0]
+
+;表情:困って追い込まれている
+[chara_mod name="Tsumugi" face="ii_eye_close" time=0]
+
+;表情:我に返る
+[chara_mod name="Tsumugi" face="giza_eye_open" time=0]
+
+;表情:怒り
+[chara_face name="Tsumugi" face="mu_anger" storage="chara/tsumugi/tsumugi_mu_anger.png"]
+```
+
+### キャラクター会話パターン
+
+- Hacker, Zundamon
+  - 一人称「ボク」
+  - 相手「オマエ」「みんな」
+  - 語尾「〜なのだ」「〜のだ」
+  - 口癖「ほんまごめん」
+
+- Tsumugi
+  - 一人称「あーし」
+  - ギャルっぽい話し方明るく元気で人懐っこい
+  - 可愛い
+  - 優しいけどちょっと生意気
+
