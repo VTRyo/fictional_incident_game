@@ -2,7 +2,8 @@
 [clearfix]
 [start_keyconfig]
 
-[bg storage="question.png" time="100"]
+[bg storage="question.jpg" time="100"]
+[playbgm storage="question_bgm.mp3" loop=true volume=30]
 
 ;メニューボタンの表示
 @showmenubutton

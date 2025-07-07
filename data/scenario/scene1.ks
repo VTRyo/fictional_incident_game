@@ -30,12 +30,10 @@
 [chara_config ptext="chara_name_area"]
 
 ;このゲームで登場するキャラクターを宣言
-;zunda
-[chara_new  name="Zunda" storage="chara/zunda/zunda_stand.png" jname="Zundamon"  ]
 
 ;tsumugi 感情表現
-[chara_new  name="Tsumugi"  storage="chara/tsumugi/tsumugi_stand.png" jname="Tsumugi" ]
-[chara_face name="Tsumugi" face="default" storage="chara/tsumugi/tsumugi_stand.png"]
+[chara_new  name="Tsumugi"  storage="chara/tsumugi/tsumugi_default.png" jname="Tsumugi" ]
+[chara_face name="Tsumugi" face="default" storage="chara/tsumugi/tsumugi_default.png"]
 [chara_face name="Tsumugi" face="he_mouth" storage="chara/tsumugi/tsumugi_he.png"]
 [chara_face name="Tsumugi" face="close_mouth" storage="chara/tsumugi/tsumugi_close_mouth.png"]
 [chara_face name="Tsumugi" face="giza_eye_open" storage="chara/tsumugi/tsumugi_giza_eye_open.png"]
@@ -54,8 +52,8 @@
 [font color="black" size=40 edge="white" edge_size=2]
 
 ;音声設定
-[voconfig sebuf=2 name="Tsumugi" vostorage="tsumugi/tsumugi_1_{number}.ogg" number=1 volume=70 wait=false]
-
+[voconfig sebuf=2 name="Tsumugi" vostorage="tsumugi/tsumugi_1_{number}.ogg" number=1 volume=70]
+[voconfig sebuf=2 name="Hacker" vostorage="zunda/zunda_1_{number}.ogg" number=1 volume=70]
 [vostart]
 
 #Tsumugi
@@ -80,14 +78,18 @@ What's this? There are so many messages from Slack... [p]
 
 #Tsumugi
 [chara_mod name="Tsumugi" face="he_mouth" time=0]
-;えっ、SLO違反？　そんなの聞いてないよ！どうしよ、そうだ！SREチーム、SREチームに連絡しなきゃ！
+;えっ、SLO違反？　そんなの聞いてないよ！
 Huh? SLO violation? I didn't hear about that![p]
 
+#Tsumugi
+;どうしよ、そうだ！
 [chara_mod name="Tsumugi" face="close_mouth" time=0]
 What should I do?[p]
 [wait time=1000]
+#Tsumugi
 [chara_mod name="Tsumugi" face="giza_eye_open" time=0]
-Oh! I need to contact the SRE team, the SRE team![p]
+;SREチーム、SREチームに連絡しなきゃ！
+I need to contact the SRE team![p]
 
 #?
 ;ゆっくり点を表示する
@@ -117,9 +119,11 @@ Nice to meet you. I have now hacked and locked your service.[p]
 
 #Tsumugi
 [chara_mod name="Tsumugi" face="giza_eye_open" time=0]
-;な、なんでそんなことを……。このままじゃユーザさんが困るの。何が目的？ それより、SREチームが全然応答しない……！
+;な、なんでそんなことを……。このままじゃユーザさんが困るの。
 Why would you do such a thing?[r]
 Users will be in trouble if this continues.[p]
+#Tsumugi
+;何が目的？ それより、SREチームが全然応答しない……！
 What is your purpose? Moreover, the SRE team is not responding at all...![p]
 
 #Hacker
@@ -143,6 +147,7 @@ Huh? Me? But I'm not an SRE, and I don't know anything about it![p]
 #Hacker
 ;そんなんじゃあこのサービスは返せないのだ！
 I can't restore the service with that attitude![p]
+#Hacker
 ;仕方ないのだ、おまえにチャンスをやるのだ
 Well, I don't have a choice. I'll give you a chance.[p]
 
@@ -152,12 +157,20 @@ Well, I don't have a choice. I'll give you a chance.[p]
 Alright, I have my professional pride too![p]
 
 #Hacker
-;それでこそなのだ。これから僕が言う通りに、システムについて解答するのだ。特別にaiを使っても、近くにいる人と手を組んでやってもいいのだ。それと、SREの亡霊を2名だけ配置してやるのだ。
+;それでこそなのだ。これから僕が言う通りに、システムについて解答するのだ。
 That's the spirit! From now on, you will answer questions about the system as I tell you.[p]
+#Hacker
+;特別にaiを使っても、近くにいる人と手を組んでやってもいいのだ。
 You can even use AI or team up with people nearby.[p]
+#Hacker
+;それと、SREのサポーターを2名だけ配置してやるのだ。
 Also, I'll assign two SRE ghosts to help you.[p]
-
+#Hacker
 ;時間は50分。それ以上は我慢できないのだ
 You have 50 minutes. I can't wait any longer than that![p]
 
+
 [vostop]
+
+
+@jump storage="question.ks"
